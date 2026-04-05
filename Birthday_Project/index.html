@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shivay! ❤️</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* --- CSS Reset & Variables --- */
+        :root {
+            --primary: #ff3366;
+            --secondary: #ff85a2;
+            --bg: #fff0f3;
+            --text: #590d22;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .music-btn {
+            background: var(--primary);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.2s;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3);
+        }
+
+        /* --- HAMBURGER MENU (Mobile Only) --- */
+        .hamburger {
+            display: none;
+            /* Desktop pe hidden */
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: 0.3s;
+        }
+
+        /* --- HERO HEADER --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(-45deg, #fff0f3, #ffe3e8, #fff, #ffe3e8);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .bg-heart {
+            position: absolute;
+            color: rgba(255, 51, 102, 0.1);
+            font-size: 4rem;
+            animation: floatBG 10s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes floatBG {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        .hero-content {
+            z-index: 1;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 6rem;
+            color: var(--primary);
+            text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.5);
+            animation: bounce 2s infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            color: #c9184a;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .main-btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
+            transition: all 0.3s ease;
+            animation: pulseBtn 2s infinite;
+        }
+
+        .main-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 77, 109, 0.6);
+        }
+
+        @keyframes pulseBtn {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 51, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 51, 102, 0);
+            }
+        }
+
+        /* --- GALLERY --- */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            font-family: 'Dancing Script';
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 15px 15px 60px 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .photo-card:nth-child(1) {
+            transform: rotate(-6deg);
+            z-index: 1;
+        }
+
+        .photo-card:nth-child(2) {
+            transform: rotate(4deg) translateY(-20px);
+            z-index: 2;
+        }
+
+        .photo-card:nth-child(3) {
+            transform: rotate(-5deg);
+            z-index: 1;
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.15) !important;
+            z-index: 100;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-frame {
+            width: 100%;
+            height: 320px;
+            background-color: #ffccd5;
+            overflow: hidden;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            color: #444;
+        }
+
+        /* --- MESSAGE --- */
+        .message-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            font-size: 1.2rem;
+            line-height: 1.9;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .message-box::before {
+            content: '❤';
+            font-size: 60px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary);
+        }
+
+        /* --- CURSOR --- */
+        .trail-heart {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff3366'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: cover;
+            pointer-events: none;
+            animation: floatUp 1s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-50px) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* --- MOBILE MEDIA QUERY --- */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            .photo-card {
+                transform: rotate(0deg) !important;
+                margin-bottom: 20px;
+                width: 90%;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            /* Show Hamburger */
+            .hamburger {
+                display: flex;
+            }
+
+            /* Mobile Menu Styles */
+            .nav-links {
+                display: none;
+                /* Hide default */
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--nav-bg);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Show class when active */
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body id="home">
+
+    <audio id="bgMusic" loop>
+        <source src="./happy-birthday-357371.mp3" type="audio/mpeg">
+    </audio>
+    
+
+    <nav>
+        <div class="logo">Shivay 😘</div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="./Gift.html">Gift 🎁</a></li>
+            <li>
+                <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="bg-heart" style="left: 10%; animation-duration: 8s;">❤</div>
+        <div class="bg-heart" style="left: 30%; animation-duration: 12s; font-size: 2rem;">❤</div>
+        <div class="bg-heart" style="left: 70%; animation-duration: 10s;">❤</div>
+        <div class="bg-heart" style="left: 90%; animation-duration: 15s; font-size: 3rem;">❤</div>
+
+        <div class="hero-content">
+            <h1>Happy Birthday Shivay!</h1>
+            <p class="subtitle">To our little champ, Shivay 💕✨</p>
+            <button class="main-btn" onclick="startSurprise()">Click for a Surprise! 🎉</button>
+        </div>
+    </header>
+
+    <section id="memories">
+        <h2>Our Beautiful Memories</h2>
+        <div class="gallery">
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="./cake.jpeg" alt="Shivay Cake">
+                </div>
+                <p class="caption">Shivay Cake</p>
+            </div>
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="./img1.jpeg" alt="Crazy Us">
+                </div>
+                <p class="caption">Crazy Us</p>
+            </div>
+            <div class="photo-card">
+                <div class="photo-frame">
+                    <img src="./collections.jpeg" alt="Forever">
+                </div>
+                <p class="caption">Forever</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gift">
+        <div class="message-box">
+            <p>
+                <strong>Dear Shivay,</strong><br><br>
+Happy Birthday 🎂🎉<br>
+Aaj tum 1 saal ke ho gaye ho 🥳<br>
+Bhagwan tumhe hamesha khush rakhe 😊<br>
+Hamesha haste khelte raho 👶💙<br><br>
+<strong>Lots of Love ❤️</strong>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ by Aditya</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // --- 1. MOBILE MENU TOGGLE ---
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // --- 2. MUSIC LOGIC ---
+        var music = document.getElementById("bgMusic");
+        var btn = document.querySelector(".music-btn");
+        var isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                btn.innerHTML = "🎵 Play Music";
+                btn.style.background = "var(--primary)";
+            } else {
+                music.play().catch(error => console.log("User interaction required first"));
+                btn.innerHTML = "⏸ Pause";
+                btn.style.background = "#c9184a";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // --- 3. AUTO PLAY HACK ---
+        document.body.addEventListener('click', function () {
+            if (!isPlaying) {
+                toggleMusic();
+            }
+        }, { once: true });
+
+        // --- 4. SURPRISE BUTTON ---
+        function startSurprise() {
+            document.getElementById('memories').scrollIntoView({ behavior: 'smooth' });
+
+            // Confetti Blast
+            var duration = 3 * 1000;
+            var end = Date.now() + duration;
+            (function frame() {
+                confetti({
+                    particleCount: 5, angle: 60, spread: 55, origin: { x: 0 },
+                    colors: ['#ff3366', '#ff85a2']
+                });
+                confetti({
+                    particleCount: 5, angle: 120, spread: 55, origin: { x: 1 },
+                    colors: ['#ff3366', '#ff85a2']
+                });
+                if (Date.now() < end) requestAnimationFrame(frame);
+            }());
+        }
+
+        // --- 5. CURSOR TRAIL ---
+        document.addEventListener('mousemove', function (e) {
+            var body = document.querySelector('body');
+            var heart = document.createElement('span');
+            heart.classList.add('trail-heart');
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            var size = Math.random() * 20;
+            heart.style.width = 10 + size + 'px';
+            heart.style.height = 10 + size + 'px';
+            body.appendChild(heart);
+            setTimeout(function () { heart.remove(); }, 1000);
+        });
+    </script>
+</body>
+
+</html>
